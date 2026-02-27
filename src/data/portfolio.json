@@ -1,0 +1,147 @@
+{
+  "personal": {
+    "name": "Tạ Tấn Đạt",
+    "title": "Full-Stack Developer",
+    "tagline": "Crafting elegant digital experiences with clean code and thoughtful design.",
+    "location": "Ho Chi Minh City, Vietnam",
+    "email": "alex.nguyen@email.com",
+    "github": "https://github.com/alexnguyen",
+    "linkedin": "https://linkedin.com/in/alexnguyen",
+    "website": "https://alexnguyen.dev",
+    "avatar": "",
+    "available": true
+  },
+  "about": {
+    "bio": "I'm a full-stack developer with 4+ years of experience building scalable web applications. I care deeply about the intersection of great engineering and thoughtful user experience.",
+    "highlights": [
+      "4+ years building production web apps",
+      "Open-source contributor",
+      "Design-minded engineer"
+    ]
+  },
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Jquery"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "Node.js",
+        "PostgreSQL",
+        "Redis",
+        "REST APIs",
+        "GraphQL"
+      ]
+    },
+    {
+      "category": "DevOps",
+      "items": [
+        "Docker",
+        "AWS",
+        "CI/CD",
+        "Vercel",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        "Git",
+        "Figma",
+        "Linear",
+        "Notion",
+        "VS Code"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "TechFlow Inc.",
+      "role": "Senior Frontend Developer",
+      "period": "2022 — Present",
+      "location": "Remote",
+      "description": "Led frontend architecture for a SaaS platform serving 50k+ users. Reduced bundle size by 40%.",
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "AWS"
+      ]
+    },
+    {
+      "id": "exp-2",
+      "company": "StartupXYZ",
+      "role": "Full-Stack Developer",
+      "period": "2020 — 2022",
+      "location": "Ho Chi Minh City",
+      "description": "Built and launched 3 products from scratch. Designed backend infrastructure handling 1M+ monthly requests.",
+      "tags": [
+        "React",
+        "Node.js",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "id": "exp-3",
+      "company": "Digital Agency",
+      "role": "Junior Developer",
+      "period": "2019 — 2020",
+      "location": "Ho Chi Minh City",
+      "description": "Delivered 15+ client websites. Introduced component-based design system cutting dev time by 30%.",
+      "tags": [
+        "React",
+        "WordPress",
+        "CSS"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "Luminary",
+      "description": "A minimalist habit-tracking app with smart insights. Built with Next.js, Supabase, and a custom analytics engine. 2k+ active users.",
+      "link": "https://luminary.app",
+      "github": "https://github.com/alex/luminary",
+      "tags": [
+        "Next.js",
+        "Supabase",
+        "TypeScript"
+      ],
+      "year": "2024"
+    },
+    {
+      "id": "proj-2",
+      "name": "Palettify",
+      "description": "AI-powered color palette generator for designers. Featured on Product Hunt.",
+      "link": "https://palettify.io",
+      "github": "https://github.com/alex/palettify",
+      "tags": [
+        "React",
+        "OpenAI API",
+        "Canvas API"
+      ],
+      "year": "2023"
+    },
+    {
+      "id": "proj-3",
+      "name": "DevLog",
+      "description": "Open-source CLI tool for structured developer journaling. 500+ stars on GitHub.",
+      "link": null,
+      "github": "https://github.com/alex/devlog",
+      "tags": [
+        "Node.js",
+        "CLI",
+        "Open Source"
+      ],
+      "year": "2023"
+    }
+  ]
+}
