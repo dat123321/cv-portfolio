@@ -2,62 +2,72 @@
   "personal": {
     "name": "Tạ Tấn Đạt",
     "title": "Full-Stack Developer",
-    "tagline": "Crafting elegant digital experiences with clean code and thoughtful design.",
+    "tagline": "Specializing in PHP & Laravel with hands-on experience in modern web technologies and self-hosted deployments.",
     "location": "Ho Chi Minh City, Vietnam",
-    "email": "alex.nguyen@email.com",
-    "github": "https://github.com/alexnguyen",
-    "linkedin": "https://linkedin.com/in/alexnguyen",
-    "website": "https://alexnguyen.dev",
+    "email": "tatandat77@gmail.com",
+    "github": "https://github.com/dat123321",
+    "linkedin": "",
+    "website": "https://tatandat-dev.io.vn",
     "avatar": "",
     "available": true
   },
   "about": {
-    "bio": "I'm a full-stack developer with 4+ years of experience building scalable web applications. I care deeply about the intersection of great engineering and thoughtful user experience.",
+    "bio": "I'm a Mid-level Full-Stack Developer with 3+ years of experience building and maintaining production web applications. I specialize in PHP & Laravel for backend development, with hands-on experience in Node.js, Vue.js, and Next.js. I'm passionate about clean architecture, scalable systems, and continuously expanding my tech stack beyond my comfort zone.",
     "highlights": [
-      "4+ years building production web apps",
-      "Open-source contributor",
-      "Design-minded engineer"
+      "3+ years building production web apps",
+      "Specialized in PHP & Laravel ecosystem",
+      "Self-hosted Next.js portfolio on personal server"
     ]
   },
   "skills": [
     {
-      "category": "Frontend",
-      "items": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Jquery"
-      ]
-    },
-    {
       "category": "Backend",
       "items": [
+        "PHP",
+        "Laravel",
         "Node.js",
-        "PostgreSQL",
-        "Redis",
+        "Express.js",
         "REST APIs",
-        "GraphQL"
+        "GraphQL",
+        "JWT Authentication",
+        "OOP",
+        "MVC + Service + Repository"
       ]
     },
     {
-      "category": "DevOps",
+      "category": "Frontend",
       "items": [
-        "Docker",
-        "AWS",
-        "CI/CD",
-        "Vercel",
-        "GitHub Actions"
+        "Vue.js",
+        "Next.js",
+        "Bootstrap",
+        "jQuery",
+        "Blade Templating"
+      ]
+    },
+    {
+      "category": "Database",
+      "items": [
+        "MySQL",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "category": "Specialized",
+      "items": [
+        "Payment Gateway Integration (MoMo, OnePay, PayOS)",
+        "E-invoice Integration (xCyberBill)",
+        "FIFO Inventory System",
+        "ESCPOS Printing"
       ]
     },
     {
       "category": "Tools",
       "items": [
         "Git",
-        "Figma",
-        "Linear",
-        "Notion",
+        "GitHub",
+        "PM2",
+        "Inno Setup",
+        "pkg (Node.js packaging)",
         "VS Code"
       ]
     }
@@ -65,82 +75,67 @@
   "experience": [
     {
       "id": "exp-1",
-      "company": "TechFlow Inc.",
-      "role": "Senior Frontend Developer",
-      "period": "2022 — Present",
-      "location": "Remote",
-      "description": "Led frontend architecture for a SaaS platform serving 50k+ users. Reduced bundle size by 40%.",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "AWS"
-      ]
+      "company": "Công Ty Phần Mềm Việt Vang",
+      "role": "PHP Laravel Developer",
+      "period": "August 2023 — Present",
+      "location": "Ho Chi Minh City, Vietnam",
+      "description": "Responsible for the development and maintenance of multiple client-facing web applications using PHP, Laravel, Node.js, and Vue.js, managing the full lifecycle of several projects from requirement analysis to production deployment.",
+      "tags": ["PHP", "Laravel", "Node.js", "Vue.js", "JWT", "PayOS", "xCyberBill"]
     },
     {
       "id": "exp-2",
-      "company": "StartupXYZ",
-      "role": "Full-Stack Developer",
-      "period": "2020 — 2022",
-      "location": "Ho Chi Minh City",
-      "description": "Built and launched 3 products from scratch. Designed backend infrastructure handling 1M+ monthly requests.",
-      "tags": [
-        "React",
-        "Node.js",
-        "PostgreSQL"
-      ]
-    },
-    {
-      "id": "exp-3",
-      "company": "Digital Agency",
-      "role": "Junior Developer",
-      "period": "2019 — 2020",
-      "location": "Ho Chi Minh City",
-      "description": "Delivered 15+ client websites. Introduced component-based design system cutting dev time by 30%.",
-      "tags": [
-        "React",
-        "WordPress",
-        "CSS"
-      ]
+      "company": "Công Ty Phần Mềm Việt Vang",
+      "role": "PHP Laravel Intern",
+      "period": "June 2023 — August 2023",
+      "location": "Ho Chi Minh City, Vietnam",
+      "description": "Built dynamic UI components using Laravel Blade, Bootstrap, and jQuery/AJAX. Applied MVC + Service + Repository architecture patterns and RESTful API concepts in a real-world production environment.",
+      "tags": ["PHP", "Laravel", "Blade", "Bootstrap", "jQuery", "Ajax"]
     }
   ],
   "projects": [
     {
       "id": "proj-1",
-      "name": "Luminary",
-      "description": "A minimalist habit-tracking app with smart insights. Built with Next.js, Supabase, and a custom analytics engine. 2k+ active users.",
-      "link": "https://luminary.app",
-      "github": "https://github.com/alex/luminary",
-      "tags": [
-        "Next.js",
-        "Supabase",
-        "TypeScript"
-      ],
-      "year": "2024"
+      "name": "Delta POS",
+      "description": "A comprehensive POS management system for F&B and retail businesses. Features include QR code ordering, multi-payment methods, xCyberBill e-invoice integration (VAT & non-VAT), inventory management with barcode scanning, role-based access control, and a standalone receipt printing app packaged as a Windows .exe.",
+      "link": "https://vietvang.net/deltapos-landing-page/",
+      "github": "",
+      "tags": ["PHP", "Laravel", "JWT", "Node.js", "ESCPOS", "xCyberBill"],
+      "year": "2023"
     },
     {
       "id": "proj-2",
-      "name": "Palettify",
-      "description": "AI-powered color palette generator for designers. Featured on Product Hunt.",
-      "link": "https://palettify.io",
-      "github": "https://github.com/alex/palettify",
-      "tags": [
-        "React",
-        "OpenAI API",
-        "Canvas API"
-      ],
+      "name": "HyperSoft",
+      "description": "A middleware web application bridging HyperSoft POS and the xCyberBill e-invoice platform, automating invoice data transmission. Integrated PayOS payment gateway to handle service plan renewals.",
+      "link": "",
+      "github": "",
+      "tags": ["PHP", "Laravel", "PayOS", "xCyberBill"],
       "year": "2023"
     },
     {
       "id": "proj-3",
-      "name": "DevLog",
-      "description": "Open-source CLI tool for structured developer journaling. 500+ stars on GitHub.",
-      "link": null,
-      "github": "https://github.com/alex/devlog",
-      "tags": [
-        "Node.js",
-        "CLI",
-        "Open Source"
-      ],
+      "name": "Minpo Recruit",
+      "description": "A recruitment platform for elementary school teachers in Tokyo, Japan. Analyzed existing codebase and independently developed new features aligned with established design patterns.",
+      "link": "https://minpo.or.jp/recruit/",
+      "github": "",
+      "tags": ["PHP", "OOP", "HTML", "CSS", "JavaScript"],
+      "year": "2023"
+    },
+    {
+      "id": "proj-4",
+      "name": "ALOA E-commerce",
+      "description": "Full-stack e-commerce platform with Laravel backend and Vue.js frontend. Integrated xCyberBill e-invoice and developed a custom inventory management package following FIFO principles with daily snapshot mechanism for accurate stock tracking.",
+      "link": "https://aloa.asia/",
+      "github": "",
+      "tags": ["PHP", "Laravel", "Vue.js", "xCyberBill", "FIFO"],
+      "year": "2023"
+    },
+    {
+      "id": "proj-5",
+      "name": "Uni-Taxi",
+      "description": "Taxi booking application with integrated MoMo and OnePay electronic payment gateways, handling end-to-end transaction flows including payment processing and manual refund management.",
+      "link": "https://unitaxi.vn/",
+      "github": "",
+      "tags": ["Node.js", "Express.js", "GraphQL", "Socket.IO", "Next.js", "TypeScript"],
       "year": "2023"
     }
   ]
