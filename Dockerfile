@@ -17,15 +17,3 @@ COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 EXPOSE 3000
 CMD ["node", "server.js"]
-```
-
----
-
-**.dockerignore** — tạo cùng thư mục gốc:
-```
-node_modules
-.next
-.git
-.env*
-npm-debug.log
-README.md
