@@ -1,0 +1,188 @@
+{
+  "personal": {
+    "name": "Ta Tan Dat",
+    "title": "Full-Stack Developer",
+    "tagline": "Specializing in PHP & Laravel with hands-on experience in modern web technologies and self-hosted deployments.",
+    "location": "Ho Chi Minh City, Vietnam",
+    "email": "tatandat77@gmail.com",
+    "github": "https://github.com/dat123321",
+    "linkedin": "",
+    "website": "http://tatandat-dev.io.vn",
+    "avatar": "",
+    "available": true
+  },
+  "about": {
+    "bio": "I'm a Mid-level Full-Stack Developer with 3+ years of experience building and maintaining production web applications. I specialize in PHP & Laravel for backend development, with hands-on experience in Node.js, Vue.js, and Next.js. I'm passionate about clean architecture, scalable systems, and continuously expanding my tech stack beyond my comfort zone.",
+    "highlights": [
+      "3+ years building production web apps",
+      "Specialized in PHP & Laravel ecosystem",
+      "Self-hosted Next.js portfolio on personal server"
+    ]
+  },
+  "skills": [
+    {
+      "category": "Backend",
+      "items": [
+        "PHP",
+        "Laravel",
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "GraphQL",
+        "JWT Authentication",
+        "OOP",
+        "MVC + Service + Repository"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "Vue.js",
+        "Next.js",
+        "Bootstrap",
+        "jQuery",
+        "Blade Templating"
+      ]
+    },
+    {
+      "category": "Database",
+      "items": [
+        "MySQL",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "category": "Specialized",
+      "items": [
+        "Payment Gateway Integration (MoMo, OnePay, PayOS)",
+        "E-invoice Integration (xCyberBill)",
+        "FIFO Inventory System",
+        "ESCPOS Printing"
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        "Git",
+        "GitHub",
+        "PM2",
+        "Inno Setup",
+        "pkg (Node.js packaging)",
+        "VS Code"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "company": "Công Ty Phần Mềm Việt Vang",
+      "role": "PHP Laravel Developer",
+      "period": "August 2023 — Present",
+      "location": "Ho Chi Minh City, Vietnam",
+      "description": "Responsible for the development and maintenance of multiple client-facing web applications using PHP, Laravel, Node.js, and Vue.js, managing the full lifecycle of several projects from requirement analysis to production deployment.",
+      "tags": [
+        "PHP",
+        "Laravel",
+        "Node.js",
+        "Vue.js",
+        "JWT",
+        "PayOS",
+        "xCyberBill"
+      ]
+    },
+    {
+      "id": "exp-2",
+      "company": "Công Ty Phần Mềm Việt Vang",
+      "role": "PHP Laravel Intern",
+      "period": "June 2023 — August 2023",
+      "location": "Ho Chi Minh City, Vietnam",
+      "description": "Built dynamic UI components using Laravel Blade, Bootstrap, and jQuery/AJAX. Applied MVC + Service + Repository architecture patterns and RESTful API concepts in a real-world production environment.",
+      "tags": [
+        "PHP",
+        "Laravel",
+        "Blade",
+        "Bootstrap",
+        "jQuery",
+        "Ajax"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "Delta POS",
+      "description": "A comprehensive POS management system for F&B and retail businesses. Features include QR code ordering, multi-payment methods, xCyberBill e-invoice integration (VAT & non-VAT), inventory management with barcode scanning, role-based access control, and a standalone receipt printing app packaged as a Windows .exe.",
+      "link": "https://vietvang.net/deltapos-landing-page/",
+      "github": "",
+      "tags": [
+        "PHP",
+        "Laravel",
+        "JWT",
+        "Node.js",
+        "ESCPOS",
+        "xCyberBill"
+      ],
+      "year": "2023"
+    },
+    {
+      "id": "proj-2",
+      "name": "HyperSoft",
+      "description": "A middleware web application bridging HyperSoft POS and the xCyberBill e-invoice platform, automating invoice data transmission. Integrated PayOS payment gateway to handle service plan renewals.",
+      "link": "",
+      "github": "",
+      "tags": [
+        "PHP",
+        "Laravel",
+        "PayOS",
+        "xCyberBill"
+      ],
+      "year": "2023"
+    },
+    {
+      "id": "proj-3",
+      "name": "Minpo Recruit",
+      "description": "A recruitment platform for elementary school teachers in Tokyo, Japan. Analyzed existing codebase and independently developed new features aligned with established design patterns.",
+      "link": "https://minpo.or.jp/recruit/",
+      "github": "",
+      "tags": [
+        "PHP",
+        "OOP",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "year": "2023"
+    },
+    {
+      "id": "proj-4",
+      "name": "ALOA E-commerce",
+      "description": "Full-stack e-commerce platform with Laravel backend and Vue.js frontend. Integrated xCyberBill e-invoice and developed a custom inventory management package following FIFO principles with daily snapshot mechanism for accurate stock tracking.",
+      "link": "https://aloa.asia/",
+      "github": "",
+      "tags": [
+        "PHP",
+        "Laravel",
+        "Vue.js",
+        "xCyberBill",
+        "FIFO"
+      ],
+      "year": "2023"
+    },
+    {
+      "id": "proj-5",
+      "name": "Uni-Taxi",
+      "description": "Taxi booking application with integrated MoMo and OnePay electronic payment gateways, handling end-to-end transaction flows including payment processing and manual refund management.",
+      "link": "https://unitaxi.vn/",
+      "github": "",
+      "tags": [
+        "Node.js",
+        "Express.js",
+        "GraphQL",
+        "Socket.IO",
+        "Next.js",
+        "TypeScript"
+      ],
+      "year": "2023"
+    }
+  ]
+}

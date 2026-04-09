@@ -1,6 +1,5 @@
 node_modules
 .next
 .env.local
-src/data/portfolio.json
 .claude
 tsconfig.tsbuildinfo
