@@ -6,137 +6,76 @@ export default function Hero() {
   const { personal } = portfolioData;
 
   return (
-    <section className="flex flex-col justify-center px-8 pt-20 max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Gradient overlay — fades the sky bg into the section below */}
+      <div className="absolute inset-0 z-0"
+        style={{ background: "linear-gradient(to bottom, rgba(10,10,16,0.35) 0%, rgba(10,10,16,0.55) 60%, rgba(10,10,16,0.90) 100%)" }} />
 
-        {/* LEFT — text content */}
-        <div>
-          {/* Status badge */}
-          <div className="animate-fade-up delay-100 mb-8">
-            {personal.available && (
-              <span
-                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase px-4 py-2 rounded-full"
-                style={{
-                  backgroundColor: "rgba(200,169,110,0.12)",
-                  color: "var(--accent)",
-                  border: "1px solid rgba(200,169,110,0.25)",
-                }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                Available for work
-              </span>
-            )}
-          </div>
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-4xl">
+        <span className="animate-fade-up delay-100 block text-xs tracking-[0.3em] uppercase mb-6 font-bold"
+          style={{ color: "var(--primary)" }}>
+          {personal.title}
+        </span>
 
-          {/* Name */}
-          <h1
-            className="animate-fade-up delay-200 font-display leading-tight mb-6"
-            style={{ fontSize: "clamp(2.5rem, 5vw, 5rem)", color: "var(--ink)" }}
-          >
-            {personal.name.split(" ").map((word, i) => (
-              <span
-                key={i}
-                style={{ color: "var(--ink)" }}
-              >
-                {word} {" "}
-              </span>
-            ))}
-          </h1>
+        <h1 className="animate-fade-up delay-200 serif leading-tight mb-8"
+          style={{ fontSize: "clamp(3rem, 8vw, 7rem)", color: "var(--text)" }}>
+          Hi, I am{" "}
+          <span className="italic" style={{ color: "var(--primary)" }}>
+            {personal.name}
+          </span>
+        </h1>
 
-          {/* Divider */}
-          <div
-            className="animate-fade-up delay-300 mb-6"
-            style={{ width: "60px", height: "1px", backgroundColor: "var(--accent)" }}
-          />
+        <p className="animate-fade-up delay-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+          style={{ color: "var(--text-variant, #d6c4ac)" }}>
+          {personal.tagline}
+        </p>
 
-          {/* Tagline */}
-          <p
-            className="animate-fade-up delay-400 text-lg leading-relaxed mb-8"
-            style={{ color: "var(--muted)" }}
-          >
-            {personal.tagline}
-          </p>
-
-          {/* Role + Location */}
-          <div className="animate-fade-up delay-500 flex flex-wrap items-center gap-4 mb-12">
-            <span
-              className="font-mono text-sm tracking-wider px-4 py-2 rounded-sm"
-              style={{ backgroundColor: "var(--subtle)", color: "var(--ink)" }}
+        {/* Icon links */}
+        <div className="animate-fade-in delay-400 flex justify-center gap-8 items-center">
+          {personal.github && (
+            <a href={personal.github} target="_blank" rel="noopener noreferrer"
+              className="transition-colors"
+              style={{ color: "var(--text-variant, #d6c4ac)" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--primary)")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text-variant, #d6c4ac)")}
             >
-              {personal.title}
-            </span>
-            <span className="text-sm" style={{ color: "var(--muted)" }}>
-              ↗ {personal.location}
-            </span>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="animate-fade-in delay-800 flex items-center gap-3">
-            <div
-              className="w-px h-12"
-              style={{ background: "linear-gradient(to bottom, var(--accent), transparent)" }}
-            />
-            <span className="text-xs tracking-widest uppercase" style={{ color: "var(--muted)" }}>
-              Scroll
-            </span>
-          </div>
+              <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+          )}
+          {personal.linkedin && (
+            <a href={personal.linkedin} target="_blank" rel="noopener noreferrer"
+              className="transition-colors"
+              style={{ color: "var(--text-variant, #d6c4ac)" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--primary)")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text-variant, #d6c4ac)")}
+            >
+              <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          )}
+          <a href={`mailto:${personal.email}`}
+            className="transition-colors"
+            style={{ color: "var(--text-variant, #d6c4ac)" }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--primary)")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text-variant, #d6c4ac)")}
+          >
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            </svg>
+          </a>
         </div>
+      </div>
 
-        {/* RIGHT — decorative cards */}
-        <div className="animate-fade-in delay-400 flex flex-col gap-4">
-
-          {/* Two small cards — stack on mobile, side-by-side on sm+ */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div
-              className="rounded-2xl p-5"
-              style={{ border: "1px solid var(--subtle)", backgroundColor: "var(--paper)" }}
-            >
-              <p className="font-mono text-xs tracking-widest uppercase mb-3" style={{ color: "var(--muted)" }}>Stack</p>
-              <div className="flex flex-col gap-1.5">
-                {["PHP", "Laravel", "Node.js"].map((s) => (
-                  <span key={s} className="text-xs font-mono px-2 py-1 rounded-sm" style={{ backgroundColor: "var(--subtle)", color: "var(--ink)" }}>
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div
-              className="rounded-2xl p-5 flex flex-col justify-center min-h-[120px]"
-              style={{ backgroundColor: "rgba(200,169,110,0.1)", border: "1px solid rgba(200,169,110,0.2)" }}
-            >
-              <p className="font-mono text-xs tracking-widest uppercase" style={{ color: "var(--accent)" }}>Open to</p>
-              <p className="font-display text-3xl leading-tight mt-2" style={{ color: "var(--ink)" }}>
-                New <span className="italic">roles</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Social links */}
-          <div
-            className="rounded-2xl px-6 py-4 flex flex-wrap items-center justify-between gap-3"
-            style={{ border: "1px solid var(--subtle)" }}
-          >
-            <span className="text-xs tracking-widest uppercase font-mono" style={{ color: "var(--muted)" }}>Find me on</span>
-            <div className="flex gap-4">
-              {personal.github && (
-                <a href={personal.github} target="_blank" rel="noopener noreferrer"
-                  className="text-sm font-medium transition-colors duration-200 hover:text-accent"
-                  style={{ color: "var(--ink)" }}>
-                  GitHub ↗
-                </a>
-              )}
-              {personal.linkedin && (
-                <a href={personal.linkedin} target="_blank" rel="noopener noreferrer"
-                  className="text-sm font-medium transition-colors duration-200 hover:text-accent"
-                  style={{ color: "var(--ink)" }}>
-                  LinkedIn ↗
-                </a>
-              )}
-            </div>
-          </div>
-
-        </div>
+      {/* Scroll arrow */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce-y opacity-40">
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"
+          style={{ color: "var(--text)" }}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
+        </svg>
       </div>
     </section>
   );

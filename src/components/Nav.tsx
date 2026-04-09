@@ -4,27 +4,23 @@ import { useState, useEffect } from "react";
 import { portfolioData } from "@/data/portfolio";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
+  { label: "Home",     href: "#home" },
+  { label: "About",    href: "#about" },
+  { label: "Skills",   href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Contact",  href: "#contact" },
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("home");
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 40);
-
-      const sections = navItems.map((item) => item.href.slice(1));
-      for (const id of sections.reverse()) {
+      if (window.scrollY < 80) { setActive("home"); return; }
+      const ids = ["contact", "projects", "skills", "about", "home"];
+      for (const id of ids) {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(id);
-          break;
-        }
+        if (el && window.scrollY >= el.offsetTop - 120) { setActive(id); break; }
       }
     };
     window.addEventListener("scroll", onScroll);
@@ -32,62 +28,49 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      style={{
-        backgroundColor: scrolled ? "rgba(247,245,240,0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid #e8e4dc" : "1px solid transparent",
-      }}
-    >
-      <div className="max-w-5xl mx-auto px-8 py-5 flex items-center justify-between">
-        <a
-          href="#"
-          className="font-display text-lg tracking-tight"
-          style={{ color: "var(--ink)" }}
-        >
-          {portfolioData.personal.name.split(" ")[0]}
-          <span style={{ color: "var(--accent)" }}>.</span>
+    <nav className="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl"
+      style={{ boxShadow: "0 0 40px rgba(255,186,56,0.06)" }}>
+      <div className="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+        {/* Logo */}
+        <a href="#home" className="serif italic text-2xl" style={{ color: "var(--primary)" }}>
+          {portfolioData.personal.name}
         </a>
 
-        <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item.href}>
+        {/* Links */}
+        <div className="hidden md:flex gap-10 items-center">
+          {navItems.map((item) => {
+            const id = item.href.slice(1);
+            const isActive = active === id;
+            return (
               <a
+                key={item.href}
                 href={item.href}
-                className="text-sm tracking-wide transition-colors duration-200"
-                style={{
-                  color:
-                    active === item.href.slice(1)
-                      ? "var(--ink)"
-                      : "var(--muted)",
-                  fontWeight: active === item.href.slice(1) ? 500 : 300,
-                }}
+                className="serif text-lg tracking-tight transition-colors"
+                style={{ color: isActive ? "var(--primary)" : "#94a3b8",
+                         borderBottom: isActive ? "2px solid var(--primary)" : "2px solid transparent",
+                         paddingBottom: "4px" }}
               >
                 {item.label}
               </a>
-            </li>
-          ))}
-        </ul>
+            );
+          })}
+        </div>
 
-        <a
-          href={`mailto:${portfolioData.personal.email}`}
-          className="hidden md:block text-sm px-5 py-2 rounded-full transition-all duration-300"
-          style={{
-            border: "1px solid var(--accent)",
-            color: "var(--accent)",
-          }}
-          onMouseEnter={(e) => {
-            (e.target as HTMLElement).style.backgroundColor = "var(--accent)";
-            (e.target as HTMLElement).style.color = "var(--paper)";
-          }}
-          onMouseLeave={(e) => {
-            (e.target as HTMLElement).style.backgroundColor = "transparent";
-            (e.target as HTMLElement).style.color = "var(--accent)";
-          }}
-        >
-          Say Hello
-        </a>
+        {/* Resume CTA */}
+        {portfolioData.personal.website && (
+          <a
+            href={portfolioData.personal.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-2.5 rounded-full font-bold text-sm tracking-wide hover:scale-105 transition-transform active:opacity-80"
+            style={{
+              background: "linear-gradient(to right, var(--primary), var(--primary-container))",
+              color: "var(--on-primary-container)",
+            }}
+          >
+            Resume
+          </a>
+        )}
       </div>
     </nav>
   );

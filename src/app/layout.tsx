@@ -7,14 +7,10 @@ export const metadata: Metadata = {
   description: portfolioData.about.bio,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="noise">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -16,77 +16,96 @@ export default function Experience() {
   }, []);
 
   return (
-    <section id="experience" ref={ref} className="py-32 px-8 max-w-5xl mx-auto">
-      <div className="reveal flex items-center gap-4 mb-16">
-        <span className="font-mono text-xs tracking-widest uppercase" style={{ color: "var(--accent)" }}>03</span>
-        <span className="text-xs tracking-widest uppercase" style={{ color: "var(--muted)" }}>Experience</span>
-        <div className="flex-1 h-px" style={{ backgroundColor: "var(--subtle)" }} />
-      </div>
+    <section id="experience" ref={ref} className="py-32 px-12" style={{ backgroundColor: "var(--surface)", backdropFilter: "blur(18px)" }}>
+      <div className="max-w-screen-xl mx-auto">
+        <h2 className="reveal serif text-4xl mb-20 text-center" style={{ color: "var(--text)" }}>
+          Professional Journey
+        </h2>
 
-      <div className="grid md:grid-cols-5 gap-16">
-        <div className="md:col-span-2">
-          <h2 className="reveal font-display text-4xl md:text-5xl leading-tight sticky top-24" style={{ color: "var(--ink)" }}>
-            Where I've<br />
-            <span className="italic" style={{ color: "var(--muted)" }}>worked</span>
-          </h2>
-        </div>
+        {/* Timeline */}
+        <div className="relative space-y-12"
+          style={{
+            "--tw-before-bg": "var(--outline-variant)",
+          } as React.CSSProperties}
+        >
+          {/* Center line */}
+          <div
+            className="hidden md:block absolute top-0 bottom-0 w-0.5 left-1/2 -translate-x-1/2"
+            style={{
+              background: "linear-gradient(to bottom, transparent, rgba(81,69,50,0.4), transparent)",
+            }}
+          />
 
-        <div className="md:col-span-3 space-y-1">
-          {portfolioData.experience.map((job, i) => (
-            <div
-              key={i}
-              className="reveal group py-8"
-              style={{
-                borderBottom: "1px solid var(--subtle)",
-                animationDelay: `${i * 100}ms`,
-              }}
-            >
-              <div className="flex items-start justify-between mb-3 flex-wrap gap-2">
-                <div>
-                  <h3
-                    className="font-display text-xl transition-colors duration-200"
-                    style={{ color: "var(--ink)" }}
-                  >
-                    {job.role}
-                  </h3>
-                  <div className="flex items-center gap-2 mt-1">
-                    <span className="text-sm font-medium" style={{ color: "var(--accent)" }}>
-                      {job.company}
-                    </span>
-                    <span style={{ color: "var(--subtle)" }}>·</span>
-                    <span className="text-sm" style={{ color: "var(--muted)" }}>
-                      {job.location}
-                    </span>
-                  </div>
-                </div>
-                <span
-                  className="font-mono text-xs tracking-wider"
-                  style={{ color: "var(--muted)" }}
+          {portfolioData.experience.map((job, i) => {
+            const isLeft = i % 2 === 0;
+            return (
+              <div
+                key={job.id || i}
+                className="reveal relative flex items-center justify-between md:justify-normal group"
+                style={{
+                  flexDirection: isLeft ? "row" : "row-reverse",
+                  animationDelay: `${i * 120}ms`,
+                }}
+              >
+                {/* Dot */}
+                <div
+                  className="flex items-center justify-center w-10 h-10 rounded-full z-10 flex-shrink-0
+                    absolute left-0 md:left-1/2 md:-translate-x-1/2"
+                  style={{
+                    border: `1px solid ${i === 0 ? "var(--primary)" : "var(--outline-variant)"}`,
+                    backgroundColor: "var(--surface)",
+                  }}
                 >
-                  {job.period}
-                </span>
-              </div>
-
-              <p className="text-sm leading-loose mb-4" style={{ color: "var(--muted)" }}>
-                {job.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {job.tags.map((tag, j) => (
-                  <span
-                    key={j}
-                    className="font-mono text-xs px-2.5 py-1 rounded-sm"
+                  <div
+                    className="w-2 h-2 rounded-full"
                     style={{
-                      backgroundColor: "var(--subtle)",
-                      color: "var(--muted)",
+                      backgroundColor: i === 0 ? "var(--primary)" : "var(--outline-variant)",
+                      animation: i === 0 ? "bounceY 1.4s ease-in-out infinite" : undefined,
                     }}
+                  />
+                </div>
+
+                {/* Card */}
+                <div
+                  className="w-[calc(100%-4rem)] md:w-[45%] p-8 rounded-xl ml-14 md:ml-0"
+                  style={{ backgroundColor: "var(--surface-container)" }}
+                >
+                  <span
+                    className="text-sm font-bold tracking-widest block mb-2"
+                    style={{ color: i === 0 ? "var(--primary)" : "rgba(255,186,56,0.6)" }}
                   >
-                    {tag}
+                    {job.period.toUpperCase()}
                   </span>
-                ))}
+                  <h4 className="serif text-xl mb-1" style={{ color: "var(--text)" }}>
+                    {job.role}
+                  </h4>
+                  <p className="text-sm italic mb-4" style={{ color: "var(--secondary)" }}>
+                    {job.company}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-variant, #d6c4ac)" }}>
+                    {job.description}
+                  </p>
+                  {job.tags && job.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {job.tags.map((tag, j) => (
+                        <span
+                          key={j}
+                          className="font-mono text-xs px-2.5 py-1 rounded"
+                          style={{
+                            backgroundColor: "rgba(255,186,56,0.1)",
+                            color: "var(--primary)",
+                            border: "1px solid rgba(255,186,56,0.2)",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
